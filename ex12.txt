@@ -1,0 +1,51 @@
+
+
+//تعویض خانه های آرایه با هم
+
+package ex12;
+
+import java.util.Scanner;
+
+public class Ex12 {
+
+	public static void main(String[]args)
+	{
+		System.out.print("Enter size of array: ");
+		
+		Scanner input = new Scanner(System.in);
+		
+		int size = input.nextInt();
+		int[] array1 = new int[size];
+		System.out.print("Enter elements of array: ");
+		
+		for(int i = 0 ; i < size ; i++)
+		{
+			array1[i] = input.nextInt();
+			
+		}
+		
+		for(int i = 0 ; i < size ; i++)
+		{
+			System.out.print(String.format("%d\t" , array1[i]));
+		}
+		System.out.print("\n\n");
+		
+		int swap;
+		
+		for(int i = 0 ; i < size ; i++)
+		{
+			if((size - 1 -i) > i )
+			{
+			swap = array1[i];
+			array1[i] = array1[size - 1-i];
+			array1[size-1-i] = swap;
+			}
+		}
+		
+		for(int i = 0 ; i < size ; i++)
+		{
+			System.out.print(String.format("%d\t" , array1[i]));
+		}
+		
+	}
+}
